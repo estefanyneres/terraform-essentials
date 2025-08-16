@@ -1,5 +1,5 @@
 provider "aws" {
-  region  = "us-east-1"
+  region  = "${terraform.workspace == "production" ? "us-east-1" : "us-west-2"}"
 }
 
 provider "aws" {
